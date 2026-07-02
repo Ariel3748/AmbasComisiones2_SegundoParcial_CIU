@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import logoImg from '../assets/image.png';
 import ThemeToggle from './ThemeToggle';
-import { Tag, PersonCircle, Search} from 'react-bootstrap-icons';
+import { Postcard, Tag, PersonCircle, Search} from 'react-bootstrap-icons';
 import '../index.css';
 
 export default function NavBar() {
@@ -26,11 +26,10 @@ export default function NavBar() {
       {user ? (
         <div className={`d-flex align-items-center gap-2 ${mobile ? 'w-100 justify-content-center' : ''}`}>
           <Link to="/create-post" className="btn btn-sm reddit-btn-orange">
-            + Crear Post
+            <Postcard size={16} className="me-1"/> Crear Post
           </Link>
-          <Link to="/manage-tags" className="btn btn-sm border-0 px-2" style={{ color: 'var(--reddit-muted)', fontSize: '13px' }}>
-            <Tag size={16} />
-            <span>Etiquetas</span>
+          <Link to="/manage-tags" className="btn btn-sm reddit-btn-orange">
+            <Tag size={16} className="me-1"/>Tags
           </Link>
           <Link to="/profile" className="btn btn-sm reddit-btn-secondary px-3" style={{ fontSize: '13px' }}>
             <PersonCircle size={16} style={{marginRight:'4px'}}/> u/{user.nickName}
